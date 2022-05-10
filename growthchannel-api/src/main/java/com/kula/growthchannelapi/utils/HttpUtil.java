@@ -20,9 +20,9 @@ public class HttpUtil {
     }
 
     public static String postForm(String url, Map<String, Object> params) {
-        return HttpRequest.post("https://oauth2.googleapis.com/token")
-                .form(params)//表单内容
-                .timeout(20000)//超时，毫秒
+        return HttpRequest.post(url)
+                .form(params)
+                .timeout(20000)
                 .execute().body();
     }
 }
