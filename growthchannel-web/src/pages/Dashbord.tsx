@@ -9,15 +9,7 @@ import { lineData, barData, pieData } from '../constants/mockData';
 
 const Home: React.FC = () => {
 
-    const token = Cookies.get('token')
-    const localToken = localStorage.getItem('token')
-
-    if (token == null && localToken == null) {
-        window.location.href = "/"
-    }
-    if (token !== null && token !== localToken) {
-        localStorage.setItem("token", Cookies.get("token") as string);
-    }
+    verifyToken();
 
     const [open, setOpen] = useState<boolean>(true);
 
@@ -86,6 +78,21 @@ const Home: React.FC = () => {
                 </DialogActions>
             </Dialog>
         </div>)
+
+
+}
+
+
+const verifyToken = () => {
+    const token = Cookies.get('token');
+    const localToken = localStorage.getItem('token');
+
+    if (token == null && localToken == null) {
+        window.location.href = "/";
+    }
+    if (token !== null && token !== localToken) {
+        localStorage.setItem("token", Cookies.get("token") as string);
+    }
 }
 
 const MyPieCharts = (props: any) => {
