@@ -14,7 +14,7 @@
 5. you can view snapshot.gif in current directory to get more infomation.
 
 #### Design
-1. There are two tables, user_info and google_user, the relationship between them is one to many. it's easy to add other third party providers signIn and signIn with email and password, if someone signIn with email or username, you only operate user_info table.
+1. There are two tables, user_info and provider_user, the relationship between them is one to many, one user can own many 3rd party providers. it's easy to add other third party providers signIn and signIn with email and password, if someone signIn with github or facebook, you can extend this feture by add another provide_type field into provider_user table,  if someone signIn with email or username, you only need operate user_info table, email or username is unique. 
 ![Login](login.png)
 
 
