@@ -1,0 +1,22 @@
+oauth:
+  google:
+    clientId: 536040088246-1r88fn0piquddlen57r9ekpgd19lnnv1.apps.googleusercontent.com
+    clientSecret: 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
+    authRedirectUrl: http://localhost:8080/oauth/Google/login
+    analyticsRedirectUrl: http://localhost:8080/analytics/connect
+    redirectFrontPageUrl: http://localhost:3000/home
+
+
+jwt:
+  key: 1qaz
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:55435/postgres?currentSchema=public&useSSL=false
+    password: abc123
+    username: postgres

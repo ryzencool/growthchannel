@@ -1,0 +1,10 @@
+growthchannel-api/.idea
+growthchannel-api/.mvn
+growthchannel-api/target
+growthchannel-api/*.iml
+growthchannel-api/mvnw.cmd
+growthchannel-api/mvnw
+
+
+growthchannel-web/node_modules
+.DS_Store
