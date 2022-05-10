@@ -52,7 +52,9 @@ public class AuthController {
         return BaseResponse.success(authServiceMap.get(provider).newAuthUrl(request));
     }
 
-
+    /**
+     * google server's callback
+     */
     @RequestMapping("/oauth/{provider}/login")
     public ResponseEntity<Object> oauthCallback(@RequestParam("code") String code,
                                                 @PathVariable("provider") OAuthProviderEnum provider,
@@ -88,28 +90,5 @@ public class AuthController {
     public void SignOut() {
 
     }
-
-
-//    @GetMapping("/oauth/google/url1")
-//    public BaseResponse<String> googleAuthUrl1() {
-//        return BaseResponse.success(OAuth2GoogleHelper.buildUrl("https://accounts.google.com/o/oauth2/v2/auth",
-//                Map.of(
-//                        "scope", "https://www.googleapis.com/auth/analytics",
-//                        "prompt", "consent",
-//                        "include_granted_scopes", "true",
-//                        "response_type", "code",
-//                        "state", UUID.randomUUID().toString(),
-//                        "redirect_uri", "http://localhost:8080/login/oauth2/code/google",
-//                        "client_id", "536040088246-1r88fn0piquddlen57r9ekpgd19lnnv1.apps.googleusercontent.com"
-//                )));
-//    }
-
-
-//    @RequestMapping("login/oauth2/code/google")
-//    public String foo(@RequestParam("code") String code) {
-//        // 发送code
-//
-//    }
-
 
 }
