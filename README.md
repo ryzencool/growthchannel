@@ -13,4 +13,4 @@
  
 #### Design 
 1. There are two tables, user_info, and provider_user, the relationship between them is one to many, one user can own many 3rd party providers. it's easy to add other third party providers or sign in with email and password, if someone signIn with GitHub or Facebook, you can extend this feature by add another provide_type field into provider_user table, if someone sign in with an email or username, you only need operate user_info table, email or username is unique. 
-2. ![Login](login.png)
+![Login](login.png)
