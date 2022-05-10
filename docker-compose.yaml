@@ -26,6 +26,12 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
+      - JWT_KEY=1qaz
+      - OAUTH_GOOGLE_CLIENTID=536040088246-1r88fn0piquddlen57r9ekpgd19lnnv1.apps.googleusercontent.com
+      - OAUTH_GOOGLE_CLIENTSECRET=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
+      - OAUTH_GOOGLE_AUTHREDIRECTURL=http://localhost:8080/oauth/Google/login
+      - OAUTH_GOOGLE_ANALYTICSREDIRECTURL=http://localhost:8080/analytics/connect
+      - OAUTH_GOOGLE_REDIRECTFRONTPAGEURL=http://localhost:3000/home
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   db:

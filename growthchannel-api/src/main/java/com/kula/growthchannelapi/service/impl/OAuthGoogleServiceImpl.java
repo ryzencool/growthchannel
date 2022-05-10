@@ -141,6 +141,7 @@ public class OAuthGoogleServiceImpl implements OAuthService {
                 .username(oauthUser.getUsername())
                 .avatar(oauthUser.getAvatar())
                 .createTime(LocalDateTime.now())
+                .isConnectGoogleAnalytics(false)
                 .isDel(false)
                 .build();
         user = userInfoRepository.save(user);

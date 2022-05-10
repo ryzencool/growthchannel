@@ -38,7 +38,9 @@ public class UserIdentityResolver implements HandlerMethodArgumentResolver {
                                   NativeWebRequest webRequest,
                                   WebDataBinderFactory binderFactory) throws Exception {
         var token = webRequest.getHeader("Authorization");
-
+        if (token == null) {
+            throw new BaseBizException(BaseError.NO_AUTH);
+        }
         Claims claims = null;
         try {
             claims = jwtHelper.parse(token);
