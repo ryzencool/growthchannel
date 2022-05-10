@@ -1,13 +1,13 @@
 import Button from '@mui/material/Button'
 import React from 'react'
-import { PROMPT_SELECT_ACCOUNT, REDIRECT_LOGIN, SCOPE_PROFILE } from '../constants/authConstant'
+import { PROMPT_SELECT_ACCOUNT, REDIRECT_LOGIN, SCOPE_MAIL, SCOPE_PROFILE } from '../constants/authConstant'
 import { getAuthUrl } from '../request/AuthRequest'
 
 const Login: React.FC = () => {
 
     const handleClickGoogleLogin = () => {
         getAuthUrl({
-            scope: SCOPE_PROFILE,
+            scope: SCOPE_PROFILE + " " + SCOPE_MAIL,
             redirectUrl: REDIRECT_LOGIN,
             prompt: PROMPT_SELECT_ACCOUNT
         }, (data: any) => {

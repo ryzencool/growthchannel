@@ -2,6 +2,8 @@ import { HOST } from "./systemConstant"
 
 export const SCOPE_PROFILE = "https://www.googleapis.com/auth/userinfo.profile"
 
+export const SCOPE_MAIL = "https://www.googleapis.com/auth/userinfo.email"
+
 export const SCOPE_ANALYTICS = "https://www.googleapis.com/auth/analytics"
 
 export const REDIRECT_LOGIN = `${HOST}/oauth/Google/login`
