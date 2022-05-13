@@ -1,16 +1,29 @@
 import { HOST } from "./systemConstant"
 
-export const SCOPE_PROFILE = "https://www.googleapis.com/auth/userinfo.profile"
+const SCOPE_PROFILE: string = "https://www.googleapis.com/auth/userinfo.profile"
 
-export const SCOPE_MAIL = "https://www.googleapis.com/auth/userinfo.email"
+const SCOPE_MAIL: string = "https://www.googleapis.com/auth/userinfo.email"
 
-export const SCOPE_ANALYTICS = "https://www.googleapis.com/auth/analytics"
+const SCOPE_ANALYTICS: string = "https://www.googleapis.com/auth/analytics"
 
-export const REDIRECT_LOGIN = `${HOST}/oauth/Google/login`
+const REDIRECT_LOGIN: string = `${HOST}/oauth/Google/login`
 
-export const REDIRECT_ANALYTICS = `${HOST}/analytics/connect`
+const REDIRECT_ANALYTICS: string = `${HOST}/analytics/connect`
 
-export const PROMPT_SELECT_ACCOUNT = "select_account"
+const PROMPT_SELECT_ACCOUNT: string = "select_account"
 
-export const PROMPT_CONSENT = "consent"
+const PROMPT_CONSENT: string = "consent"
+
+const TOKEN_STR: string = "token"
+
+export {
+    SCOPE_ANALYTICS,
+    SCOPE_MAIL,
+    SCOPE_PROFILE,
+    REDIRECT_LOGIN,
+    REDIRECT_ANALYTICS,
+    PROMPT_SELECT_ACCOUNT,
+    PROMPT_CONSENT,
+    TOKEN_STR
+}
 

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import Cookies from 'js-cookie'
 import { getAuthUrl, getUserInfo } from '../request/AuthRequest';
-import { PROMPT_CONSENT, REDIRECT_ANALYTICS, SCOPE_ANALYTICS } from '../constants/authConstant';
+import { PROMPT_CONSENT, REDIRECT_ANALYTICS, SCOPE_ANALYTICS, TOKEN_STR } from '../constants/authConstant';
 import { lineData, barData, pieData } from '../constants/mockData';
 
 const Home: React.FC = () => {
@@ -84,14 +84,14 @@ const Home: React.FC = () => {
 
 
 const verifyToken = () => {
-    const token = Cookies.get('token');
-    const localToken = localStorage.getItem('token');
+    const token: string | undefined = Cookies.get(TOKEN_STR);
+    const localToken: string | null = localStorage.getItem(TOKEN_STR);
 
     if (token == null && localToken == null) {
         window.location.href = "/";
     }
     if (token !== null && token !== localToken) {
-        localStorage.setItem("token", Cookies.get("token") as string);
+        localStorage.setItem(TOKEN_STR, Cookies.get(TOKEN_STR) as string);
     }
 }
 

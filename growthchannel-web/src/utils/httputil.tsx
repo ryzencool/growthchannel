@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { TOKEN_STR } from '../constants/authConstant'
 
 export const get = (url: string, params: any, callback: (data: any) => void) => {
     axios.get(url, {
@@ -15,7 +16,7 @@ export const get = (url: string, params: any, callback: (data: any) => void) => 
 }
 
 export const getWithAuth = (url: string, params: any, callback: (data: any) => void) => {
-    let jwt = localStorage.getItem('token')
+    const jwt: string | null = localStorage.getItem(TOKEN_STR)
     if (jwt === null) {
         // redirct to login page
     }
