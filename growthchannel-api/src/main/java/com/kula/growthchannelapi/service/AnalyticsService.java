@@ -9,6 +9,7 @@ import com.kula.growthchannelapi.utils.OAuth2GoogleHelper;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
@@ -38,9 +39,7 @@ public class AnalyticsService {
     }
 
 
-    /**
-     * connect google analytics
-     */
+    @Transactional(rollbackOn = Exception.class)
     @SneakyThrows
     public void connect(String code) {
         var tokenBundle = oAuth2GoogleHelper.exchangeToken(code, googleProperties.getAnalyticsRedirectUrl());

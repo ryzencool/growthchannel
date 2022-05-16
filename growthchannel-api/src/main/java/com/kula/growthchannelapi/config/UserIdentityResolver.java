@@ -49,6 +49,7 @@ public class UserIdentityResolver implements HandlerMethodArgumentResolver {
         }
 
 
+
         return ((UserIdentity) parameter.getParameterType().getDeclaredConstructor().newInstance()).identity(claims);
     }
 

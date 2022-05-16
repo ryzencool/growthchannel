@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+/**
+ * @author alexey
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,7 +25,7 @@ public class ProviderUser {
     @Column(columnDefinition = "int8 default 0")
     private Long userId;
 
-    @Column(columnDefinition = "text default ''")
+    @Column( columnDefinition = "text default ''")
     private String email;
 
     @Column(columnDefinition = "text default ''")
@@ -34,7 +37,7 @@ public class ProviderUser {
     @Column(columnDefinition = "text default ''")
     private String providerUserId;
 
-    @Column(columnDefinition = "text default ''")
+    @Column(name = "access_token")
     private String accessToken;
 
     @Column(columnDefinition = "text default ''")

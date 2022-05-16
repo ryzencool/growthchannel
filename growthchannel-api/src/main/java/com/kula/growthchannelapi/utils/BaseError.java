@@ -12,4 +12,5 @@ public class BaseError {
     public static final BaseErrorCode NO_AUTH = new BaseErrorCode("100001", "NOT AUTHENTICATION");
 
     public static final BaseErrorCode EXPIRE_TOKEN = new BaseErrorCode("100002", "TOKEN HAS EXPIRED");
+
 }

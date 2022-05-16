@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * @author alexey
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

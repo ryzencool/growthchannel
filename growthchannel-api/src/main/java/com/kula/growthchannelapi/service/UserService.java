@@ -4,6 +4,8 @@ import com.kula.growthchannelapi.domain.UserInfo;
 import com.kula.growthchannelapi.repository.UserInfoRepository;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class UserService {
 
@@ -13,6 +15,7 @@ public class UserService {
         this.userInfoRepository = userInfoRepository;
     }
 
+    @Transactional(rollbackOn = Exception.class)
     public UserInfo userInfo(Long id) {
         return userInfoRepository.findById(id).orElseThrow();
     }
